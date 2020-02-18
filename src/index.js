@@ -15,6 +15,10 @@ const GlobalStyle = createGlobalStyle`
   h1, h2, h3 {
     font-family: "helvetica neue",helvetica,arial;
   }
+
+  h2 {
+    font-size: 32px;
+  }
 `;
 
 ReactDOM.render(

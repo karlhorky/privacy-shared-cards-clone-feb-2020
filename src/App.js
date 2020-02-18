@@ -15,6 +15,12 @@ import privacyCard from './privacy-card.svg';
 const Header = styled.header`
   padding: 10px 20px;
   display: flex;
+  background: linear-gradient(to bottom, #00000080, #0000);
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 2;
 
   > div {
     margin-left: auto;
@@ -60,6 +66,19 @@ const Button = styled.button`
           padding: 15px 30px;
           line-height: 30px;
         `}
+
+  ${props =>
+    props.shareCards &&
+    css`
+      background-color: #7e73ff;
+    `}
+
+
+    ${props =>
+      props.spendSecurely &&
+      css`
+        background-color: #1fd760;
+      `}
 `;
 
 const Hero = styled.div`
@@ -75,7 +94,11 @@ const Hero = styled.div`
 
 const HeroLeft = styled.div`
   max-width: 550px;
-  margin-right: 40px;
+  margin-right: 80px;
+
+  p {
+    margin-bottom: 35px;
+  }
 `;
 
 const SharedCards = styled.div`
@@ -174,30 +197,131 @@ const CardDetailsButton = styled.button`
     outline: none;
     padding-bottom: 0.5em;
   }
-  /*
-  ::before {
-    content: '';
-    background: #39f;
-    border-radius: 0 0 10px 10px;
-    bottom: 0;
-    height: 15px;
-    left: 0;
-    position: absolute;
-    right: 0;
-    z-index: 1;
+`;
+
+const Container = styled.div`
+  max-width: 1100px;
+  margin: 0 auto;
+`;
+
+const FeatureGrid = styled.div`
+  display: grid;
+  grid-gap: 5%;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-top: 80px;
+
+  img {
+    height: 40px;
   }
-  ::after {
-    content: '';
-    background: #186dc2;
-    border-radius: 0 0 10px 10px;
-    bottom: -5px;
-    height: 15px;
-    left: 0;
-    position: absolute;
-    right: 0;
-    transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
-    will-change: transform;
-  } */
+
+  h3 {
+    margin-top: 30px;
+    font-size: 20px;
+  }
+
+  p {
+    opacity: 0.5;
+    font-size: 15px;
+    line-height: 22px;
+  }
+`;
+
+const Section = styled.div`
+  border-radius: 20px;
+  padding: 100px 80px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 120px;
+
+  > div {
+    width: 50%;
+  }
+
+  h2 {
+    margin-top: 36px;
+    margin-bottom: 17px;
+    font-size: 35px;
+    line-height: 1;
+  }
+
+  p {
+    opacity: 0.5;
+    font-size: 15px;
+    line-height: 22px;
+    margin-bottom: 50px;
+  }
+
+  img {
+    margin-left: auto;
+  }
+
+  ${props =>
+    props.shareCards &&
+    css`
+      background: linear-gradient(to bottom, #ffffff0b, #ffffff06);
+    `}
+
+  ${props =>
+    props.limitSpending &&
+    css`
+      background: linear-gradient(to bottom, #ffffff0b, #ffffff06);
+    `}
+
+  ${props =>
+    props.spendSecurely &&
+    css`
+      background: linear-gradient(to bottom, #ffffff0b, #ffffff06);
+    `}
+`;
+
+const Pill = styled.div`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  padding: 0 20px;
+  height: 40px;
+
+  ${props =>
+    props.shareCards &&
+    css`
+      background-color: #7e73ff40;
+      color: #7e73ff;
+    `}
+
+  ${props =>
+    props.limitSpending &&
+    css`
+      background-color: #3399ff40;
+      color: #39f;
+    `}
+
+  ${props =>
+    props.spendSecurely &&
+    css`
+      background: #1fd76040;
+      color: #1fd760;
+    `}
+
+  img {
+    margin-right: 10px;
+  }
+`;
+
+const Outro = styled.div`
+  margin-top: 230px;
+  text-align: center;
+  overflow: hidden;
+
+  h2 {
+    font-size: 40px;
+    font-weight: 200;
+  }
+
+  img {
+    margin-top: 70px;
+    margin-bottom: -72px;
+  }
 `;
 
 export default function App() {
@@ -245,87 +369,103 @@ export default function App() {
         <img src={sharedCards} />
       </Hero>
 
-      <h2>The easiest way to share a card with limits</h2>
+      <Container>
+        <div style={{ padding: '115px 0 145px 0' }}>
+          <h2>The easiest way to share a card with limits</h2>
 
-      <div>
-        <div>
-          <img src={forFriends} />
-          <h3>For Friends</h3>
-          <p>
-            Send a friend a few bucks for shared expenses or surprise someone
-            with a card as a gift.
-          </p>
+          <FeatureGrid>
+            <div>
+              <img src={forFriends} />
+              <h3>For Friends</h3>
+              <p>
+                Send a friend a few bucks for shared expenses or surprise
+                someone with a card as a gift.
+              </p>
+            </div>
+            <div>
+              <img src={forParents} />
+              <h3>For Parents</h3>
+              <p>
+                Set monthly caps on how much the kids can spend and block
+                unexpected overcharges.
+              </p>
+            </div>
+            <div>
+              <img src={forBusiness} />
+              <h3>For Business</h3>
+              <p>
+                Instantly send cards with individual spending limits to
+                employees for company expenses.
+              </p>
+            </div>
+          </FeatureGrid>
         </div>
-        <div>
-          <img src={forParents} />
-          <h3>For Parents</h3>
-          <p>
-            Set monthly caps on how much the kids can spend and block unexpected
-            overcharges.
-          </p>
-        </div>
-        <div>
-          <img src={forBusiness} />
-          <h3>For Business</h3>
-          <p>
-            Instantly send cards with individual spending limits to employees
-            for company expenses.
-          </p>
-        </div>
-      </div>
 
-      <div>
-        <div>
+        <Section shareCards>
           <div>
-            <img src={cards} />
-            Share cards
+            <Pill shareCards>
+              <img src={cards} />
+              Share cards
+            </Pill>
+            <h2>All it takes is a few clicks.</h2>
+            <p>
+              No copy & paste, no screenshots, and the recipient won't need a
+              Privacy account to access the shared card. Just click the little
+              share button when viewing a card. We'll handle the rest!
+            </p>
+            <Button shareCards>Get Privacy For Free</Button>
           </div>
-          <h2>All it takes is a few clicks.</h2>
-          <p>
-            No copy & paste, no screenshots, and the recipient won't need a
-            Privacy account to access the shared card. Just click the little
-            share button when viewing a card. We'll handle the rest!
-          </p>
-          <button>Get Privacy For Free</button>
-        </div>
-        <img src={myCards} />
-      </div>
+          <img src={myCards} />
+        </Section>
 
-      <div>
-        <div>
+        <Section limitSpending>
           <div>
-            <img src={dollar} />
-            Limit spending
+            <Pill limitSpending>
+              <img src={dollar} />
+              Limit spending
+            </Pill>
+            <h2>
+              Set limits when you
+              <br />
+              need them.
+            </h2>
+            <p>
+              Block overcharges and hidden fees by setting maximum spending
+              limits on a per charge, per month or per year basis.
+            </p>
+            <Button limitSpending>Get Privacy For Free</Button>
           </div>
-          <h2>Set limits when you need them.</h2>
-          <p>
-            Block overcharges and hidden fees by setting maximum spending limits
-            on a per charge, per month or per year basis.
-          </p>
-          <button>Get Privacy For Free</button>
-        </div>
-        <img src={myCards} />
-      </div>
+          <img src={myCards} />
+        </Section>
 
-      <div>
-        <div>
+        <Section spendSecurely>
           <div>
-            <img src={lockGreen} />
-            Spend securely
+            <Pill spendSecurely>
+              <img src={lockGreen} />
+              Spend securely
+            </Pill>
+            <h2>
+              Don’t worry.
+              <br />
+              Privacy is our Priority.
+            </h2>
+            <p>
+              We hide your real card numbers to keep your personal data safe and
+              your payments safer.
+            </p>
+            <Button spendSecurely>Get Privacy For Free</Button>
           </div>
-          <h2>Don’t worry. Privacy is our Priority.</h2>
-          <p>
-            We hide your real card numbers to keep your personal data safe and
-            your payments safer.
-          </p>
-          <button>Get Privacy For Free</button>
-        </div>
-        <img src={myCards} />
-      </div>
+          <img src={myCards} />
+        </Section>
 
-      <h2>Create a free Privacy account to start sharing cards</h2>
+        <Outro>
+          <h2>Create a free Privacy account to start sharing cards</h2>
 
-      <img src={privacyCard} />
+          <Button>Get Privacy For Free</Button>
+          <br />
+          <img src={privacyCard} />
+        </Outro>
+      </Container>
     </>
   );
 }
