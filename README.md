@@ -6,29 +6,24 @@ A fairly accurate clone of Privacy's Shared Cards page.
 
 <tr><td valign="top">
 
-<div style="width: 410px">
-
 ## Live Website
 
-<img src="./screenshot-original.png" width="400" />
+<img src="./screenshot-original.png" />
 
 https://privacy.com/shared-cards
 
 In case the design is different at the URL above, there is also an [Internet Archive copy](https://web.archive.org/web/20200221084157/https://privacy.com/shared-cards) available.
 
-</div>
-
 </td><td valign="top">
-
-<div style="width: 410px">
 
 ## Clone
 
-<img src="./screenshot-clone.png" width="400" />
+<img src="./screenshot-clone.png" />
 
 https://friendly-goldwasser-2449d8.netlify.com/
 
-</div>
+<!-- Force the td width -->
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 </td></tr>
 
