@@ -8,7 +8,7 @@ A fairly accurate clone of Privacy's Shared Cards page.
 
 ## Live Website
 
-<img src="./screenshot-original.png" />
+<img src="./screenshot-original.png" height="192" />
 
 https://privacy.com/shared-cards
 
@@ -18,7 +18,7 @@ In case the design is different at the URL above, there is also an [Internet Arc
 
 ## Clone
 
-<img src="./screenshot-clone.png" />
+<img src="./screenshot-clone.png" height="192" />
 
 https://friendly-goldwasser-2449d8.netlify.com/
 
