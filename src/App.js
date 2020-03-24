@@ -12,6 +12,8 @@ import lockGreen from './lock-green.svg';
 import myCards from './my-cards.png';
 import privacyCard from './privacy-card.svg';
 
+const breakpoints = ['600px', '1100px', '1400px'];
+
 const Header = styled.header`
   padding: 10px 20px;
   display: flex;
@@ -84,20 +86,41 @@ const Button = styled.button`
 const Hero = styled.div`
   display: flex;
   justify-content: center;
-  height: 660px;
+  height: 800px;
   align-items: center;
 
   p {
     font-size: 20px;
   }
+
+  @media (max-width: ${breakpoints[2]}) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  @media (max-width: ${breakpoints[1]}) {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+
+  @media (max-width: ${breakpoints[0]}) {
+    padding-left: 30px;
+    padding-right: 30px;
+    flex-direction: column;
+    height: 100%;
+  }
 `;
 
 const HeroLeft = styled.div`
   max-width: 550px;
-  margin-right: 80px;
+  margin-right: 70px;
 
   p {
     margin-bottom: 35px;
+  }
+
+  @media (max-width: ${breakpoints[0]}) {
+    margin-top: 120px;
   }
 `;
 
@@ -119,8 +142,12 @@ const Title = styled.h1`
   line-height: 1.15;
   margin-bottom: 20px;
 
+  span {
+    display: inline-block;
+    margin-right: 15px;
+  }
+
   strong {
-    margin-left: 15px;
     color: #ff559f;
   }
 `;
@@ -130,10 +157,10 @@ const CardDetails = styled.div`
   color: #150402;
   border-radius: 10px;
   padding: 20px 20px 0 20px;
-  margin-right: -140px;
   margin-top: 70px;
   z-index: 1;
   box-shadow: 0 20px 80px 0 rgba(20, 31, 51, 0.25);
+  margin-right: -140px;
 
   > :first-child {
     font-size: 18px;
@@ -144,6 +171,10 @@ const CardDetails = styled.div`
 
   img {
     margin-bottom: -40px;
+  }
+
+  @media (max-width: ${breakpoints[1]}) {
+    margin-right: 0;
   }
 `;
 
@@ -199,9 +230,30 @@ const CardDetailsButton = styled.button`
   }
 `;
 
+const BrowserImg = styled.img`
+  @media (max-width: ${breakpoints[1]}) {
+    display: none;
+  }
+`;
+
 const Container = styled.div`
   max-width: 1100px;
   margin: 0 auto;
+
+  @media (max-width: ${breakpoints[2]}) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  @media (max-width: ${breakpoints[1]}) {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+
+  @media (max-width: ${breakpoints[0]}) {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
 `;
 
 const FeatureGrid = styled.div`
@@ -224,6 +276,10 @@ const FeatureGrid = styled.div`
     font-size: 15px;
     line-height: 22px;
   }
+
+  @media (max-width: ${breakpoints[0]}) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const Section = styled.div`
@@ -233,8 +289,18 @@ const Section = styled.div`
   align-items: center;
   margin-bottom: 120px;
 
+  @media (max-width: ${breakpoints[0]}) {
+    margin: 30px 0;
+    padding: 50px 40px;
+    /* width: 100%; */
+  }
+
   > div {
     width: 50%;
+
+    @media (max-width: ${breakpoints[1]}) {
+      width: 100%;
+    }
   }
 
   h2 {
@@ -253,6 +319,10 @@ const Section = styled.div`
 
   img {
     margin-left: auto;
+
+    @media (max-width: ${breakpoints[1]}) {
+      display: none;
+    }
   }
 
   ${props =>
@@ -348,7 +418,10 @@ export default function App() {
             Shared cards
           </SharedCards>
           <Title>
-            Instantly share cards with
+            <span>Instantly</span>
+            <span>share</span>
+            <span>cards</span>
+            <span>with</span>
             <strong>anyone</strong>
           </Title>
           <p>
@@ -366,7 +439,7 @@ export default function App() {
           <CardDetailsButton>Share card</CardDetailsButton>
           <img alt="" src={cardLyft} />
         </CardDetails>
-        <img alt="" src={sharedCards} />
+        <BrowserImg alt="" src={sharedCards} />
       </Hero>
 
       <Container>
