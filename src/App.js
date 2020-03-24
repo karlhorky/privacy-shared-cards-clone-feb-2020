@@ -344,7 +344,7 @@ export default function App() {
       <Hero>
         <HeroLeft>
           <SharedCards>
-            <img src={sharedCardsSvg} />
+            <img alt="" src={sharedCardsSvg} />
             Shared cards
           </SharedCards>
           <Title>
@@ -364,9 +364,9 @@ export default function App() {
             <CardDetailsBox>784</CardDetailsBox>
           </CardDetailsBoxGroup>
           <CardDetailsButton>Share card</CardDetailsButton>
-          <img src={cardLyft} />
+          <img alt="" src={cardLyft} />
         </CardDetails>
-        <img src={sharedCards} />
+        <img alt="" src={sharedCards} />
       </Hero>
 
       <Container>
@@ -375,7 +375,7 @@ export default function App() {
 
           <FeatureGrid>
             <div>
-              <img src={forFriends} />
+              <img alt="" src={forFriends} />
               <h3>For Friends</h3>
               <p>
                 Send a friend a few bucks for shared expenses or surprise
@@ -383,7 +383,7 @@ export default function App() {
               </p>
             </div>
             <div>
-              <img src={forParents} />
+              <img alt="" src={forParents} />
               <h3>For Parents</h3>
               <p>
                 Set monthly caps on how much the kids can spend and block
@@ -391,7 +391,7 @@ export default function App() {
               </p>
             </div>
             <div>
-              <img src={forBusiness} />
+              <img alt="" src={forBusiness} />
               <h3>For Business</h3>
               <p>
                 Instantly send cards with individual spending limits to
@@ -404,7 +404,7 @@ export default function App() {
         <Section shareCards>
           <div>
             <Pill shareCards>
-              <img src={cards} />
+              <img alt="" src={cards} />
               Share cards
             </Pill>
             <h2>All it takes is a few clicks.</h2>
@@ -415,13 +415,13 @@ export default function App() {
             </p>
             <Button shareCards>Get Privacy For Free</Button>
           </div>
-          <img src={myCards} />
+          <img alt="" src={myCards} />
         </Section>
 
         <Section limitSpending>
           <div>
             <Pill limitSpending>
-              <img src={dollar} />
+              <img alt="" src={dollar} />
               Limit spending
             </Pill>
             <h2>
@@ -435,13 +435,13 @@ export default function App() {
             </p>
             <Button limitSpending>Get Privacy For Free</Button>
           </div>
-          <img src={myCards} />
+          <img alt="" src={myCards} />
         </Section>
 
         <Section spendSecurely>
           <div>
             <Pill spendSecurely>
-              <img src={lockGreen} />
+              <img alt="" src={lockGreen} />
               Spend securely
             </Pill>
             <h2>
@@ -455,7 +455,7 @@ export default function App() {
             </p>
             <Button spendSecurely>Get Privacy For Free</Button>
           </div>
-          <img src={myCards} />
+          <img alt="" src={myCards} />
         </Section>
 
         <Outro>
@@ -463,7 +463,7 @@ export default function App() {
 
           <Button>Get Privacy For Free</Button>
           <br />
-          <img src={privacyCard} />
+          <img alt="" src={privacyCard} />
         </Outro>
       </Container>
     </>
